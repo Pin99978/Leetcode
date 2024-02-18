@@ -35,3 +35,24 @@ class Solution:
             rev =rev.next
             i += 1
         return deci
+# this method 
+class Solution:
+    def runwithandOperation(self, head: ListNode) -> int:
+        
+        
+        # store to str then covert it to binary
+
+        decimal_str = ""
+        while head:
+            decimal_str+= str(head.val)
+            head  = head.next
+        
+        binary = int(decimal_str , 2)
+        base = 1
+        decimal = 0
+        while binary> 0:
+            if binary & 1:
+                decimal += base
+            binary >>= 1
+            base <<= 1 
+        return decimal
